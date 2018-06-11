@@ -16,7 +16,9 @@
   "homepage": "https://github.com/JasonGehl/movie_catalogue#readme",
   "license": "MIT",
   "repository": "github:JasonGehl/movie_catalogue",
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.6.10"
+  },
   "devDependencies": {
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",

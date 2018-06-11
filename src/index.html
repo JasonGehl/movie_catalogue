@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' ng-app="MovieCatalogueApp">
   <head>
     <meta charset='utf-8'>
-  </head>
-  <body>
-    <h1>Movie Catalogue!</h1>
     <script src='bundle.js'></script>
+  </head>
+  <body ng-controller="MovieController">
+      <h1>Movie Catalogue!</h1>
+      <div>
+        <div ng-if="scope.error">{{error}}</div>
+        <div class="movie-listing" ng-repeat="movie in movies">
+          <div>
+            <span class="movie-label">Movie Title: </span><span class="movie-title">{{movie.title}}</span>
+          </div>
+          <div>
+            <span class="movie-label">Description: </span><span class="movie-desc">{{movie.description}}</span>
+          </div>
+          <div>
+            <span class="movie-label">Actors: </span><span ng-repeat="actor in movie.actors" class="movie-actor">{{actor}}{{$last ? '' : ', '}} </span>
+          </div>
+          <div>
+            <span class="movie-label">Genres: </span><span ng-repeat="genre in movie.genres" class="movie-genre">{{genre}}{{$last ? '' : ', '}}</span>
+          </div>
+      </div>
+    </div>
   </body>
 </html>
