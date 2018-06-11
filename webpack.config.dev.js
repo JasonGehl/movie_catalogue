@@ -18,7 +18,7 @@ export default {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
       {test: /\.css$/, loaders: ['style', 'css']},
-      {test: /\.html$/, loader: 'raw-loader'}
+      {test: /\.html$/,loader: 'raw-loader'}
     ]
   }
 }
