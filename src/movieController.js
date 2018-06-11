@@ -22,6 +22,13 @@ export default function MovieController($scope, $http){
           "description": "",
           "actors": ["Tim Robbins", "Morgan Freeman"],
           "genres": []
+        },
+        {
+          "id": "2",
+          "title": "The Matrix",
+          "description": "",
+          "actors": ["Keanu Reeves", "Carrie Anne Moss"],
+          "genres": []
         }
       ]
     };
