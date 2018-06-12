@@ -1,4 +1,4 @@
-.movie-label {
+movie-list .movie-label {
   font-weight: bold;
 }
 
@@ -9,9 +9,10 @@ movie-list {
 }
 
 movie-list .show-button {
-  background-color: white;
+  background-color: whitesmoke;
   border: 1px solid blue;
   border-radius: 6px;
+  cursor: pointer;
   height: auto;
   width: 300px;
   vertical-align: middle;
@@ -19,9 +20,14 @@ movie-list .show-button {
 }
 
 movie-list .list-container {
+  background-color: whitesmoke;
   width: 75%;
   border: 2px solid lightblue;
   border-radius: 3px;
   padding: 3px;
   margin: auto;
+}
+
+movie-list .empty-list{
+  color: slategrey;
 }
