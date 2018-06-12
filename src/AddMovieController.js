@@ -7,7 +7,7 @@ export default function AddMovieController($scope, ApiService){
     $scope.error = err;
   }
 
-  $scope.showForm = false;
+  $scope.showAddMovie = false;
 
   $scope.saveMovie = function(formData){
     //jsonify form data
