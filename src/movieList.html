@@ -1,4 +1,4 @@
-<div>
+<div ng-show="movies && movies.length > 0">
   <div ng-if="scope.error">{{error}}</div>
   <div>Sort By:
     <select ng-model="movieSortOrder">
@@ -23,4 +23,7 @@
       <span class="movie-label">Genres: </span><span ng-repeat="genre in movie.genres" class="movie-genre">{{genre}}{{$last ? '' : ', '}}</span>
     </div>
     <hr>
-</div>
+  </div>
+  </div>
+<div>
+<div ng-show="!movies || movies.length === 0">No movie data available!</div>

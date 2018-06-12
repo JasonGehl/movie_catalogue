@@ -1,12 +1,8 @@
 export default function MovieListController($scope, $http){
-  $scope.movies = [];
-
   const DATABASE_LOCATION = 'http://localhost:3001';
 
   const onMoviesGetComplete = function(response){
-    response.data.forEach(movie => {
-      $scope.movies.push(movie);
-    });
+    $scope.movies = response.data;
   }
 
   const onError = function(err){
