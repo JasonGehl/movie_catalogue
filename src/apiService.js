@@ -20,6 +20,14 @@ export default function ApiService($http, $log){
     return response.data;
   }
 
+  const onAddMovieComplete = function(response){
+    return response.data;
+  }
+
+  const addMovie = function(movieData){
+    return $http.post(DATABASE_LOCATION + '/movies', movieData).then(onMovieSaveComplete, onError).then(onAddMovieComplete, onError);
+  }
+
   const onError = function(err){
     $log.error(err);
     return err;
@@ -28,6 +36,7 @@ export default function ApiService($http, $log){
   return {
     getMovies: getMovies,
     getMovieById: getMovieById,
-    searchMovies: getMoviesWithSearch
+    searchMovies: getMoviesWithSearch,
+    addMovie: addMovie
   };
 }

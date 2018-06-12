@@ -1,6 +1,4 @@
-export default function AddMovieController($scope, $http){
-  const DATABASE_LOCATION = 'http://localhost:3001';
-
+export default function AddMovieController($scope, ApiService){
   const onMovieSaveComplete = function(response){
     //refresh movie list
   }
@@ -11,7 +9,8 @@ export default function AddMovieController($scope, $http){
 
   $scope.showForm = false;
 
-  $scope.saveMovie = function(){
-    $http.post(DATABASE_LOCATION + '/movies').then(onMovieSaveComplete, onError);
+  $scope.saveMovie = function(formData){
+    //jsonify form data
+    ApiService.addMovie(formData).then(onMovieSaveComplete, onError);
   }
 }
