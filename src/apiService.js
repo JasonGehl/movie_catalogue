@@ -25,7 +25,7 @@ export default function ApiService($http, $log){
   }
 
   const addMovie = function(movieData){
-    return $http.post(DATABASE_LOCATION + '/movies', movieData).then(onMovieSaveComplete, onError).then(onAddMovieComplete, onError);
+    return $http.post(DATABASE_LOCATION + '/movies', movieData).then(onAddMovieComplete, onError);
   }
 
   const onError = function(err){
