@@ -27,7 +27,7 @@
         </div>
         <div>
           <span class="movie-label">Genres: </span>
-          <span ng-if="movie.genres && movies.genres.length > 0" ng-repeat="genre in movie.genres" class="movie-genre">{{genre}}{{$last ? '' : ', '}}</span>
+          <span ng-if="movie.genres && movie.genres.length > 0" ng-repeat="genre in movie.genres" class="movie-genre">{{genre}}{{$last ? '' : ', '}}</span>
           <span ng-if="!movie.genres || movie.genres.length == 0" class="movie-genres empty-list">Unknown</span>
         </div>
       </span>

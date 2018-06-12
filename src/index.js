@@ -1,6 +1,6 @@
 import './index.css';
 import angular from 'angular';
-import ApiService from './apiService';
+import ApiService from './api/apiService';
 import MovieListController from './MovieListController';
 import AddMovieController from './AddMovieController';
 import MovieSearchController from './MovieSearchController';
