@@ -1,4 +1,4 @@
-export default function MovieController($scope, $http){
+export default function MovieListController($scope, $http){
   $scope.movies = [];
 
 

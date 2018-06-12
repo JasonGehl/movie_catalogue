@@ -1,11 +1,10 @@
 import './index.css';
 import angular from 'angular';
-import MovieController from './movieController';
+import MovieListController from './MovieListController';
 
-let app = angular.module("MovieCatalogueApp", []);
-
-app.controller("MovieController", ['$scope', '$http', MovieController]);
-app.component('movieList', {
-  template: require('./movieList.component.html'),
-  controller: MovieController
+angular.module("MovieCatalogueApp", [])
+.controller("MovieListController", ['$scope', '$http', MovieListController])
+.component('movieList', {
+  template: require('./movieList.html'),
+  controller: MovieListController
 });
