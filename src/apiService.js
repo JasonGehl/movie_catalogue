@@ -7,7 +7,7 @@ export default function ApiService($http, $log){
 
   const getMovieById = function(id){
     const encodedId = encodeURIComponent(id);
-    return $http.get(DATABASE_LOCATION + '/movies?id=' + encodedQuery).then(onMoviesGetComplete, onError);
+    return $http.get(DATABASE_LOCATION + '/movies?id=' + encodedId).then(onMoviesGetComplete, onError);
   }
 
   const getMoviesWithSearch = function(searchType, query){

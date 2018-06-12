@@ -8,7 +8,11 @@ movie-list {
   margin-right: auto;
 }
 
-movie-list .show-button {
+movie-list .empty-list{
+  color: slategrey;
+}
+
+.show-button {
   background-color: whitesmoke;
   border: 1px solid blue;
   border-radius: 6px;
@@ -19,7 +23,7 @@ movie-list .show-button {
   text-align: center;
 }
 
-movie-list .list-container {
+.container {
   background-color: whitesmoke;
   width: 75%;
   border: 2px solid lightblue;
@@ -28,6 +32,14 @@ movie-list .list-container {
   margin: auto;
 }
 
-movie-list .empty-list{
-  color: slategrey;
+add-movie label {
+  display: block;
+}
+
+add-movie .form-label {
+  width: 150px;
+  display: inline-block;
+}
+add-movie input[type='text'] {
+  width: 75%;
 }

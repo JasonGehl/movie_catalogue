@@ -9,6 +9,8 @@ export default function AddMovieController($scope, $http){
     $scope.error = err;
   }
 
+  $scope.showForm = false;
+
   $scope.saveMovie = function(){
     $http.post(DATABASE_LOCATION + '/movies').then(onMovieSaveComplete, onError);
   }
