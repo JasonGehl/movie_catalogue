@@ -1,0 +1,26 @@
+<div class="show-button" ng-click="scope.showForm = !scope.showForm">Add Movie to Catalogue</div>
+<div class="container" ng-show="scope.showForm">
+  <form>
+    <label class="movie-title">
+      <div class="form-label">Movie Title: </div>
+      <input type="text" name="title" placeholder="Title" required>
+    </label>
+    <label class="movie-desc">
+      <div class="form-label">Movie Description: </div>
+      <input type="text" name="description" placeholder="Description">
+    </label>
+    <label class="movie-release">
+      <div class="form-label">Year Released: </div>
+      <input type="number" name="yearReleased" value="2018" min="1900" max="2018" step="1">
+    </label>
+    <label class="movie-actors">
+      <div class="form-label">Actors: </div>
+      <input type="text" name="actors" placeholder="Actors">
+    </label>
+    <label class="movie-genre">
+      <div class="form-label">Genres: </div>
+      <input type="text" name="genres" placeholder="Genres">
+    </label>
+    <input type="submit" value="Add Movie">
+  </form>
+</div>

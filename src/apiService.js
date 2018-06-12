@@ -7,7 +7,7 @@ export default function ApiService($http, $log){
 
   const getMovieById = function(id){
     const encodedId = encodeURIComponent(id);
-    return $http.get(DATABASE_LOCATION + '/movies?id=' + encodedQuery).then(onMoviesGetComplete, onError);
+    return $http.get(DATABASE_LOCATION + '/movies?id=' + encodedId).then(onMoviesGetComplete, onError);
   }
 
   const getMoviesWithSearch = function(searchType, query){
@@ -20,6 +20,14 @@ export default function ApiService($http, $log){
     return response.data;
   }
 
+  const onAddMovieComplete = function(response){
+    return response.data;
+  }
+
+  const addMovie = function(movieData){
+    return $http.post(DATABASE_LOCATION + '/movies', movieData).then(onAddMovieComplete, onError);
+  }
+
   const onError = function(err){
     $log.error(err);
     return err;
@@ -28,6 +36,7 @@ export default function ApiService($http, $log){
   return {
     getMovies: getMovies,
     getMovieById: getMovieById,
-    searchMovies: getMoviesWithSearch
+    searchMovies: getMoviesWithSearch,
+    addMovie: addMovie
   };
 }

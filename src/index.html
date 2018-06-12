@@ -4,9 +4,13 @@
     <meta charset='utf-8'>
     <script src='bundle.js'></script>
   </head>
-  <body ng-controller="MovieListController">
-      <h1>Movie Catalogue!</h1>
+  <body >
+    <h1>Movie Catalogue!</h1>
+    <div ng-controller="MovieListController"></div>
       <movie-list></movie-list>
+    </div>
+    <div ng-controller="AddMovieController">
+      <add-movie></add-movie>
     </div>
   </body>
 </html>
