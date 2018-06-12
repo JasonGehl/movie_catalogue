@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' ng-app="MovieCatalogueApp">
   <head>
     <meta charset='utf-8'>
-  </head>
-  <body>
-    <h1>Movie Catalogue!</h1>
     <script src='bundle.js'></script>
+  </head>
+  <body ng-controller="MovieListController">
+      <h1>Movie Catalogue!</h1>
+      <movie-list></movie-list>
+    </div>
   </body>
 </html>

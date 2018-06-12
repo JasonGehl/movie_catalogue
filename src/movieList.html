@@ -1,0 +1,38 @@
+<div class="show-button" ng-click="scope.showList = !scope.showList">Full Movie Catalogue</div>
+<div class='list-container' ng-show="scope.showList">
+  <div ng-show="movies && movies.length > 0">
+    <div ng-if="error">{{error}}</div>
+    <div class='sort-option'>
+      <span class='sort-title'>Sort By:</span>
+      <select ng-model="movieSortOrder">
+        <option ng-repeat="x in movieSortOptions" value="{{x.sort}}" default="+title">{{x.name}}</option>
+      </select>
+      <hr>
+    </div>
+    <div class="movie-listing" ng-repeat="movie in movies | orderBy:movieSortOrder">
+      <span class='movie-info'>
+        <div>
+          <span class="movie-label">Movie Title: </span><span class="movie-title">{{movie.title}}</span>
+        </div>
+        <div>
+          <span class="movie-label">Description: </span><span class="movie-desc">{{movie.description || "No movie description available"}}</span>
+        </div>
+        <div>
+          <span class="movie-label">Year Released: </span><span class="movie-release">{{movie.yearReleased || "Unknown"}}</span>
+        </div>
+        <div>
+          <span class="movie-label">Actors: </span>
+          <span ng-if="movie.actors && movie.actors.length > 0" ng-repeat="actor in movie.actors" class="movie-actor">{{actor}}{{$last ? '' : ', '}} </span>
+          <span ng-if="!movie.actors || movie.actors.length == 0" class="movie-actor empty-list">Unknown</span>
+        </div>
+        <div>
+          <span class="movie-label">Genres: </span>
+          <span ng-if="movie.genres && movies.genres.length > 0" ng-repeat="genre in movie.genres" class="movie-genre">{{genre}}{{$last ? '' : ', '}}</span>
+          <span ng-if="!movie.genres || movie.genres.length == 0" class="movie-genres empty-list">Unknown</span>
+        </div>
+      </span>
+      <hr ng-if="!$last">
+    </div>
+  </div>
+  <div ng-show="!movies || movies.length === 0">No movie data available!</div>
+</div>

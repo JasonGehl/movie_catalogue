@@ -1,0 +1,33 @@
+movie-list .movie-label {
+  font-weight: bold;
+}
+
+movie-list {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+movie-list .show-button {
+  background-color: whitesmoke;
+  border: 1px solid blue;
+  border-radius: 6px;
+  cursor: pointer;
+  height: auto;
+  width: 300px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+movie-list .list-container {
+  background-color: whitesmoke;
+  width: 75%;
+  border: 2px solid lightblue;
+  border-radius: 3px;
+  padding: 3px;
+  margin: auto;
+}
+
+movie-list .empty-list{
+  color: slategrey;
+}
