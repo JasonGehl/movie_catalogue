@@ -1,8 +1,6 @@
-export default function MovieListController($scope, $http){
-  const DATABASE_LOCATION = 'http://localhost:3001';
-
-  const onMoviesGetComplete = function(response){
-    $scope.movies = response.data;
+export default function MovieListController($scope, ApiService){
+  const onMoviesGetComplete = function(movieData){
+    $scope.movies = movieData;
     $scope.showList = true;
   }
 
@@ -11,7 +9,7 @@ export default function MovieListController($scope, $http){
   }
 
   $scope.getMovies = function(){
-    $http.get(DATABASE_LOCATION + '/movies').then(onMoviesGetComplete, onError);
+    ApiService.getMovies().then(onMoviesGetComplete, onError);
   }
   $scope.movieSortOptions = [
     {'name': 'Title (asc)', 'sort': '+title'},
