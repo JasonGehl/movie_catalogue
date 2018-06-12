@@ -16,7 +16,12 @@ export default function MovieListController($scope, $http){
   $scope.getMovies = function(){
     $http.get(DATABASE_LOCATION + '/movies').then(onMoviesGetComplete, onError);
   }
-
-  $scope.message = "Hello!";
+  $scope.movieSortOptions = [
+    {'name': 'Title (asc)', 'sort': '+title'},
+    {'name': 'Title (desc)', 'sort': '-title'},
+    {'name': 'Year Released (asc)', 'sort': '+yearReleased'},
+    {'name': 'Year Released (desc)', 'sort': '-yearReleased'}
+  ];
+  $scope.movieSortOrder = '+title';
   $scope.getMovies();
 }

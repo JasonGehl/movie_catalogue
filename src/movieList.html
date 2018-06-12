@@ -1,11 +1,20 @@
 <div>
   <div ng-if="scope.error">{{error}}</div>
-  <div class="movie-listing" ng-repeat="movie in movies">
+  <div>Sort By:
+    <select ng-model="movieSortOrder">
+      <option ng-repeat="x in movieSortOptions" value="{{x.sort}}" default="+title">{{x.name}}</option>
+    </select>
+  </div>
+  <hr>
+  <div class="movie-listing" ng-repeat="movie in movies | orderBy:movieSortOrder">
     <div>
       <span class="movie-label">Movie Title: </span><span class="movie-title">{{movie.title}}</span>
     </div>
     <div>
       <span class="movie-label">Description: </span><span class="movie-desc">{{movie.description}}</span>
+    </div>
+    <div>
+      <span class="movie-label">Year Released: </span><span class="movie-release">{{movie.yearReleased}}</span>
     </div>
     <div>
       <span class="movie-label">Actors: </span><span ng-repeat="actor in movie.actors" class="movie-actor">{{actor}}{{$last ? '' : ', '}} </span>
