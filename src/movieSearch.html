@@ -1,0 +1,20 @@
+<div class="show-button" ng-click="scope.showSearch = !scope.showSearch">Search Movie Catalogue</div>
+<div class="container" ng-show="scope.showSearch">
+  <form>
+    <div>
+
+      <label style="display: block" class="search-field">
+        <span class="form-label">Search by:</span>
+        <select ng-model="searchOption">
+          <option ng-repeat="x in movieSearchOptions" value="{{x.searchOption}}" default="title">{{x.name}}</option>
+        </select>
+      </label>
+      <label style="display: block" class="search-field">
+        <span class="form-label">Search Text: </span>
+        <input name="query" type='text' placeholder="Search for..." ng-model="searchQuery" required>
+      </label>
+    </div>
+    <input type="submit" value="Search" ng-click="search()">
+  </form>
+  <!--Movie List here?-->
+</div>
