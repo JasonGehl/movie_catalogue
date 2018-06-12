@@ -1,9 +1,10 @@
 export default function MovieListController($scope, $http){
   $scope.movies = [];
 
+  const DATABASE_LOCATION = 'http://localhost:3001';
 
   const onMoviesGetComplete = function(response){
-    response.movies.forEach(movie => {
+    response.data.forEach(movie => {
       $scope.movies.push(movie);
     });
   }
@@ -13,27 +14,7 @@ export default function MovieListController($scope, $http){
   }
 
   $scope.getMovies = function(){
-    //$http.get('http://localhost:3001/movies').then(onMovieGetComplete, onError);
-    let mockData = {
-      "movies": [
-        {
-          "id": "1",
-          "title": "The Shawshank Redemption",
-          "description": "",
-          "actors": ["Tim Robbins", "Morgan Freeman"],
-          "genres": []
-        },
-        {
-          "id": "2",
-          "title": "The Matrix",
-          "description": "",
-          "actors": ["Keanu Reeves", "Carrie Anne Moss"],
-          "genres": []
-        }
-      ]
-    };
-
-    onMoviesGetComplete(mockData);
+    $http.get(DATABASE_LOCATION + '/movies').then(onMoviesGetComplete, onError);
   }
 
   $scope.message = "Hello!";

@@ -4,20 +4,22 @@
   "description": "A personal movie collection catalogue",
   "scripts": {
     "prestart": "babel-node build/startMessage.js",
-    "start": "npm-run-all --parallel security-check start-server lint:watch test:watch ",
+    "start": "npm-run-all --parallel security-check start-server lint:watch test:watch start-mockapi",
     "lint": "esw webpack.config.* src build_scripts --color",
     "lint:watch": "npm run lint -- --watch",
     "start-server": "babel-node build/devServer.js",
     "security-check": "nsp check",
     "test": "nyc mocha build/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "author": "Jason Gehl",
   "homepage": "https://github.com/JasonGehl/movie_catalogue#readme",
   "license": "MIT",
   "repository": "github:JasonGehl/movie_catalogue",
   "dependencies": {
-    "angular": "^1.6.10"
+    "angular": "^1.6.10",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "babel-cli": "6.16.0",
