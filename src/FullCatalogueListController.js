@@ -1,4 +1,4 @@
-export default function MovieListController($scope, ApiService){
+export default function FullCatalogueListController($scope, ApiService){
   const onMoviesGetComplete = function(movieData){
     $scope.movies = movieData;
   }
