@@ -1,8 +1,7 @@
-<div class="show-button" ng-click="scope.showSearch = !scope.showSearch">Search Movie Catalogue</div>
-<div class="container" ng-show="scope.showSearch">
+<div class="show-button" ng-click="showHideSearch()">Search Movie Catalogue</div>
+<div class="container" ng-show="showSearch">
   <form>
     <div>
-
       <label style="display: block" class="search-field">
         <span class="form-label">Search by:</span>
         <select ng-model="searchOption">
