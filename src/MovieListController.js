@@ -3,6 +3,7 @@ export default function MovieListController($scope, $http){
 
   const onMoviesGetComplete = function(response){
     $scope.movies = response.data;
+    $scope.showList = true;
   }
 
   const onError = function(err){
@@ -19,5 +20,7 @@ export default function MovieListController($scope, $http){
     {'name': 'Year Released (desc)', 'sort': '-yearReleased'}
   ];
   $scope.movieSortOrder = '+title';
+
+  $scope.showList = false;
   $scope.getMovies();
 }

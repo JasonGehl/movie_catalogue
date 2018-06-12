@@ -1,3 +1,27 @@
 .movie-label {
   font-weight: bold;
 }
+
+movie-list {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+movie-list .show-button {
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 6px;
+  height: auto;
+  width: 300px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+movie-list .list-container {
+  width: 75%;
+  border: 2px solid lightblue;
+  border-radius: 3px;
+  padding: 3px;
+  margin: auto;
+}
