@@ -1,4 +1,4 @@
-<div class="show-button" ng-click="showHideAddMovie()">Add Movie to Catalogue</div>
+<div class="show-button" ng-class="{open: showAddMovie}" ng-click="showHideAddMovie()">Add Movie to Catalogue</div>
 <div class="container" ng-show="showAddMovie">
   <form>
     <label class="movie-title">
