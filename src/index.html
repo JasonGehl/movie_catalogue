@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html lang='en' ng-app="MovieCatalogueApp">
+<html lang="en" ng-app="MovieCatalogueApp">
   <head>
-    <meta charset='utf-8'>
-    <script src='bundle.js'></script>
+    <meta charset="utf-8">
+    <script src="bundle.js"></script>
     <title>Jason's Movie Catalogue</title>
   </head>
   <body>
     <h1 class="catalogue-title">Jason's Movie Catalogue</h1>
-    <full-catalogue-list></full-catalogue-list>
-    <add-movie></add-movie>
-    <movie-search></movie-search>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="#!/allMovies">Full Movie Catalogue</a>
+        </li>
+        <li>
+          <a href="#!/addMovie">Add Movie</a>
+        </li>
+        <li>
+          <a href="#!/searchMovies">Search Movies</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="view-wrapper">
+      <div ng-view></div>
+    </div>
+    <div class="footer">Created by Jason Gehl</div>
   </body>
 </html>

@@ -5,7 +5,7 @@
       <select ng-model="movieSortOrder">
         <option ng-repeat="x in movieSortOptions" value="{{x.sort}}" default="+title">{{x.name}}</option>
       </select>
-      <hr>
+      <hr style="border-color: #555">
     </div>
     <div class="movie-listing" ng-repeat="movie in movies | orderBy:movieSortOrder">
       <span class='movie-info'>
@@ -34,4 +34,4 @@
       <hr ng-if="!$last">
     </div>
   </div>
-  <div ng-show="!movies || movies.length === 0">No movie data available!</div>
+  <div ng-show="moviesLoaded && !movies || movies.length === 0">No movie data available!</div>

@@ -1,17 +1,12 @@
 export default function FullCatalogueListController($scope, ApiService){
   const onMoviesGetComplete = function(movieData){
+    //set movies for use by list
     $scope.movies = movieData;
+    $scope.moviesLoaded = true;
   }
 
   const onError = (err) => {
     $scope.error = err;
-  }
-
-  $scope.showHideList = () => {
-    if(!$scope.showList){
-      $scope.getMovies();
-    }
-    $scope.showList = !$scope.showList;
   }
 
   $scope.getMovies = () => {
@@ -24,7 +19,9 @@ export default function FullCatalogueListController($scope, ApiService){
     {'name': 'Year Released (asc)', 'sort': '+yearReleased'},
     {'name': 'Year Released (desc)', 'sort': '-yearReleased'}
   ];
+
   $scope.movieSortOrder = '+title';
 
-  $scope.showList = false;
+  //on open, get the movies immediately
+  $scope.getMovies();
 }
