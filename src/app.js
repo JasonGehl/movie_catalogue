@@ -2,7 +2,7 @@ import './index.css';
 import angular from 'angular';
 import ngRoute from 'angular-route'; //eslint-disable-line no-unused-vars
 import ApiService from './api/apiService';
-import FullCatalogueListController from './FullCatalogueListController';
+import FullCatalogueListController from './allMovies/FullCatalogueListController';
 import AddMovieController from './addMovie/AddMovieController';
 import MovieSearchController from './searchMovies/MovieSearchController';
 
@@ -10,7 +10,7 @@ angular.module("MovieCatalogueApp", ['ngRoute'])
 .config(function($routeProvider){
   $routeProvider
     .when("/allMovies", {
-      template: require('./fullCatalogueList.html'),
+      template: require('./allMovies/fullCatalogueList.html'),
       controller: FullCatalogueListController
     })
     .when("/addMovie", {
