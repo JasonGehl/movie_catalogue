@@ -4,17 +4,52 @@
       "id": "1",
       "title": "The Shawshank Redemption",
       "description": "Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn't commit the crimes. While there, he forms a friendship with Red (Morgan Freeman), experiences brutality of prison life, adapts, helps the warden, etc., all in 19 years.",
-      "actors": ["Tim Robbins", "Morgan Freeman"],
-      "genres": [],
+      "actors": [
+        "Tim Robbins",
+        "Morgan Freeman"
+      ],
+      "genres": [
+        "Drama",
+        "Crime"
+      ],
       "yearReleased": 1994
     },
     {
       "id": "2",
       "title": "The Matrix",
       "description": "Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
-      "actors": ["Keanu Reeves", "Carrie Anne Moss"],
-      "genres": [],
+      "actors": [
+        "Keanu Reeves",
+        "Carrie Anne Moss"
+      ],
+      "genres": [
+        "Post-Apocalyptic",
+        "Science Fiction",
+        "Action"
+      ],
       "yearReleased": 1999
+    },
+    {
+      "title": "Finding Nemo",
+      "description": null,
+      "yearReleased": 2015,
+      "actors": [],
+      "genres": [],
+      "id": "pJ5jVVE"
+    },
+    {
+      "title": "Monty Python and the Holy Grail",
+      "description": null,
+      "yearReleased": 1980,
+      "actors": [
+        "Eric Idle",
+        "Graham Chapman"
+      ],
+      "genres": [
+        "Comedy",
+        "Musical"
+      ],
+      "id": "6KgvGOK"
     }
   ]
 }

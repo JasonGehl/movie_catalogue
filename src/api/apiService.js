@@ -1,7 +1,7 @@
 export default function ApiService($http, $log){
   const DATABASE_LOCATION = 'http://localhost:3001';
 
-  const getMovies = function(){
+  const getMovies = () => {
     return $http.get(DATABASE_LOCATION + '/movies').then(onMoviesGetComplete, onError);
   }
 

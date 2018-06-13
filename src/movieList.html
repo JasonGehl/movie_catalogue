@@ -1,8 +1,6 @@
-<div class="show-button" ng-click="scope.showList = !scope.showList">Full Movie Catalogue</div>
-<div class='container' ng-show="scope.showList">
-  <div ng-show="movies && movies.length > 0">
+<div ng-show="movies && movies.length > 0">
     <div ng-if="error">{{error}}</div>
-    <div class='sort-option'>
+    <div class='sort-option' ng-show="movies && movies.length > 1">
       <span class='sort-title'>Sort By:</span>
       <select ng-model="movieSortOrder">
         <option ng-repeat="x in movieSortOptions" value="{{x.sort}}" default="+title">{{x.name}}</option>
@@ -27,7 +25,7 @@
         </div>
         <div>
           <span class="movie-label">Genres: </span>
-          <span ng-if="movie.genres && movies.genres.length > 0" ng-repeat="genre in movie.genres" class="movie-genre">{{genre}}{{$last ? '' : ', '}}</span>
+          <span ng-if="movie.genres && movie.genres.length > 0" ng-repeat="genre in movie.genres" class="movie-genre">{{genre}}{{$last ? '' : ', '}}</span>
           <span ng-if="!movie.genres || movie.genres.length == 0" class="movie-genres empty-list">Unknown</span>
         </div>
       </span>
@@ -35,4 +33,3 @@
     </div>
   </div>
   <div ng-show="!movies || movies.length === 0">No movie data available!</div>
-</div>

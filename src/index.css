@@ -32,14 +32,15 @@ movie-list .empty-list{
   margin: auto;
 }
 
-add-movie label {
+add-movie label, movie-search label {
   display: block;
 }
 
-add-movie .form-label {
+add-movie .form-label, movie-search .form-label {
   width: 150px;
   display: inline-block;
 }
-add-movie input[type='text'] {
+
+add-movie input[type='text'], movie-search input[type='text']  {
   width: 75%;
 }
