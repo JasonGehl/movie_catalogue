@@ -1,5 +1,14 @@
 export default function AddMovieController($scope, ApiService){
-  const onMovieSaveComplete = function(response){
+  const onMovieSaveComplete = function(){
+    resetForm();
+    //toast popup?
+  }
+
+  const onError = function(err){
+    $scope.error = err;
+  }
+
+  const resetForm = function(){
     $scope.movie = {
       title: '',
       description: null,
@@ -11,14 +20,9 @@ export default function AddMovieController($scope, ApiService){
     $scope.genres = '';
   }
 
-  const onError = function(err){
-    $scope.error = err;
-  }
-
-  $scope.showAddMovie = false;
-
-  $scope.showHideAddMovie = () => {
-    $scope.showAddMovie = !$scope.showAddMovie;
+  const splitAndTrimify = function(stringToArray){
+    let stringArray = stringToArray.split(',');
+    return stringArray.map( x => x.trim());
   }
 
   $scope.movie = {
@@ -33,20 +37,16 @@ export default function AddMovieController($scope, ApiService){
   $scope.genres = '';
 
   $scope.saveMovie = function(){
-    //jsonify form data
-    if($scope.actors.length > 0){
-      let actorArray = $scope.actors.split(',');
-      actorArray.forEach(function(actorName, index, arr){
-        arr[index] = actorName.trim();
-      });
-      $scope.movie.actors = actorArray;
+    if($scope.title.length < 1){
+      return;
     }
+
+    if($scope.actors.length > 0){
+      $scope.movie.actors = splitAndTrimify($scope.actors);
+    }
+
     if($scope.genres.length > 0){
-      let genreArray = $scope.genres.split(',');
-      genreArray.forEach(function(genreName, index, arr){
-        arr[index] = genreName.trim();
-      });
-      $scope.movie.genres = genreArray;
+      $scope.movie.genres = splitAndTrimify($scope.genres);
     }
     const movieData = JSON.stringify($scope.movie);
 

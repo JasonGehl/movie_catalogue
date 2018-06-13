@@ -34,4 +34,4 @@
       <hr ng-if="!$last">
     </div>
   </div>
-  <div ng-show="!movies || movies.length === 0">No movie data available!</div>
+  <div ng-show="moviesLoaded && !movies || movies.length === 0">No movie data available!</div>

@@ -1,9 +1,8 @@
 export default function MovieSearch($scope, ApiService){
   const onSearchComplete = function(movieData){
-    console.log(movieData);
     $scope.movies = movieData;
+    $scope.moviesLoaded = true;
     $scope.showList = true;
-    //show results
   }
 
   const onError = (err) => {

@@ -16,16 +16,16 @@ export default function ApiService($http, $log){
     return $http.get(DATABASE_LOCATION + '/movies?' + encodedSearchType + '_like=' + encodedQuery).then(onMoviesGetComplete, onError);
   }
 
+  const addMovie = function(movieData){
+    return $http.post(DATABASE_LOCATION + '/movies', movieData).then(onAddMovieComplete, onError);
+  }
+
   const onMoviesGetComplete = function(response){
     return response.data;
   }
 
   const onAddMovieComplete = function(response){
     return response.data;
-  }
-
-  const addMovie = function(movieData){
-    return $http.post(DATABASE_LOCATION + '/movies', movieData).then(onAddMovieComplete, onError);
   }
 
   const onError = function(err){
