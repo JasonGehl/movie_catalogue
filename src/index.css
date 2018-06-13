@@ -42,11 +42,11 @@ html {
   color: whitesmoke;
 }
 
-movie-list .movie-label {
+.movie-label {
   font-weight: bold;
 }
 
-movie-list .empty {
+.empty {
   color: slategrey;
 }
 
@@ -67,10 +67,20 @@ movie-list .empty {
   width: 150px;
   display: inline-block;
   padding-top: 3px;
+  vertical-align: top;
 }
 
 .add-movie input[type='text'], .movie-search input[type='text']  {
   width: 75%;
+}
+
+.add-movie textarea {
+  width: 75%;
+  margin-top: 3px;
+}
+
+.add-movie .submit-button {
+  margin-top: 10px;
 }
 
 .refresh-button {

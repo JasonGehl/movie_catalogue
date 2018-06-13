@@ -27,6 +27,7 @@ export default function MovieSearch($scope, ApiService){
       'name': 'By Genre'
     }
   ];
+
   $scope.searchOption = 'title';
   $scope.searchQuery = '';
 
