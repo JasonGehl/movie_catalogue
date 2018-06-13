@@ -20,7 +20,9 @@
       "description": "Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
       "actors": [
         "Keanu Reeves",
-        "Carrie Anne Moss"
+        "Lawrence Fishburne",
+        "Carrie-Anne Moss",
+        "Hugo Weaving"
       ],
       "genres": [
         "Post-Apocalyptic",
@@ -32,7 +34,7 @@
     {
       "title": "Finding Nemo",
       "description": null,
-      "yearReleased": 2015,
+      "yearReleased": 2003,
       "actors": [],
       "genres": [],
       "id": "pJ5jVVE"
@@ -40,10 +42,13 @@
     {
       "title": "Monty Python and the Holy Grail",
       "description": null,
-      "yearReleased": 1980,
+      "yearReleased": 1975,
       "actors": [
         "Eric Idle",
-        "Graham Chapman"
+        "Graham Chapman",
+        "John Cleese",
+        "Terry Gilliam",
+        "Terry Jones"
       ],
       "genres": [
         "Comedy",
