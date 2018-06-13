@@ -1,4 +1,4 @@
-<div class="show-button" ng-click="showHideList()">Full Movie Catalogue</div>
+<div class="show-button" ng-class="{open: showList}" ng-click="showHideList()">Full Movie Catalogue</div>
 <div class='container' ng-show="showList">
   <movie-list></movie-list>
 </div>
