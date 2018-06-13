@@ -10,6 +10,11 @@ angular.module("MovieCatalogueApp", [])
 .controller("FullCatalogueListController", ['$scope', 'ApiService', FullCatalogueListController])
 .controller("AddMovieController", ['$scope', 'ApiService', AddMovieController])
 .controller("MovieSearchController", ['$scope', 'ApiService', MovieSearchController])
+.directive("movieList", function(){
+  return {
+    template: require('./movieList.html')
+  }
+})
 .component('fullCatalogueList', {
   template: require('./fullCatalogueList.html'),
   controller: FullCatalogueListController
@@ -22,4 +27,3 @@ angular.module("MovieCatalogueApp", [])
   template: require('./movieSearch.html'),
   controller: MovieSearchController
 });
-

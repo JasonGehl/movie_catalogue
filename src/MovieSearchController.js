@@ -2,6 +2,7 @@ export default function MovieSearch($scope, ApiService){
   const onSearchComplete = function(movieData){
     console.log(movieData);
     $scope.movies = movieData;
+    $scope.showList = true;
     //show results
   }
 
@@ -10,6 +11,8 @@ export default function MovieSearch($scope, ApiService){
   }
 
   $scope.showSearch = false;
+  $scope.showList = false;
+  $scope.movies = "";
 
   $scope.showHideSearch = () => {
     $scope.showSearch = !$scope.showSearch;
@@ -38,4 +41,12 @@ export default function MovieSearch($scope, ApiService){
       ApiService.searchMovies($scope.searchOption, $scope.searchQuery).then(onSearchComplete, onError);
     }
   }
+
+  $scope.movieSortOptions = [
+    {'name': 'Title (asc)', 'sort': '+title'},
+    {'name': 'Title (desc)', 'sort': '-title'},
+    {'name': 'Year Released (asc)', 'sort': '+yearReleased'},
+    {'name': 'Year Released (desc)', 'sort': '-yearReleased'}
+  ];
+  $scope.movieSortOrder = '+title';
 }
