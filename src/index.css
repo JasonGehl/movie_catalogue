@@ -72,3 +72,17 @@ movie-list .empty{
 .add-movie input[type='text'], .movie-search input[type='text']  {
   width: 75%;
 }
+
+.refresh-button {
+  text-align: center;
+  color: #000;
+  padding: 8px 16px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  width: auto;
+}
+
+.refresh-button:hover {
+  background-color: #555;
+  color: white;
+}

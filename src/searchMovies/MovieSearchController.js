@@ -1,5 +1,6 @@
 export default function MovieSearch($scope, ApiService){
   const onSearchComplete = function(movieData){
+    //load movie data for list, show list
     $scope.movies = movieData;
     $scope.moviesLoaded = true;
     $scope.showList = true;
@@ -9,13 +10,8 @@ export default function MovieSearch($scope, ApiService){
     $scope.error = err;
   }
 
-  $scope.showSearch = false;
   $scope.showList = false;
-  $scope.movies = "";
-
-  $scope.showHideSearch = () => {
-    $scope.showSearch = !$scope.showSearch;
-  }
+  $scope.movies = [];
 
   $scope.movieSearchOptions = [
     {
@@ -35,7 +31,10 @@ export default function MovieSearch($scope, ApiService){
   $scope.searchQuery = '';
 
   $scope.search = () => {
-    //jsonify form data
+    //hide list, if shown
+    $scope.showList = false;
+
+    //send search, if query text is entered
     if ($scope.searchQuery.length > 0) {
       ApiService.searchMovies($scope.searchOption, $scope.searchQuery).then(onSearchComplete, onError);
     }

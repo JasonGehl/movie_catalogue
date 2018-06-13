@@ -19,8 +19,7 @@
   "repository": "github:JasonGehl/movie_catalogue",
   "dependencies": {
     "angular": "^1.6.10",
-    "angular-route": "^1.7.2",
-    "whatwg-fetch": "^2.0.4"
+    "angular-route": "^1.7.2"
   },
   "devDependencies": {
     "babel-cli": "6.16.0",

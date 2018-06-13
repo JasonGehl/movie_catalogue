@@ -6,7 +6,7 @@ import config from '../webpack.config.dev';
 /* eslint-disable no-console */
 
 //set port number and start Express
-const URL = "http://localhost"
+const URL = 'http://localhost'
 const PORT_NUMBER = 3000;
 
 const app = express();

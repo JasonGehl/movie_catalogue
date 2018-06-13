@@ -1,7 +1,7 @@
 export default function AddMovieController($scope, ApiService){
   const onMovieSaveComplete = function(){
     resetForm();
-    //toast popup?
+    //toast popup for save success
   }
 
   const onError = function(err){
@@ -9,6 +9,7 @@ export default function AddMovieController($scope, ApiService){
   }
 
   const resetForm = function(){
+    //reset the scope/form for next addition
     $scope.movie = {
       title: '',
       description: null,
@@ -21,6 +22,7 @@ export default function AddMovieController($scope, ApiService){
   }
 
   const splitAndTrimify = function(stringToArray){
+    //split the string into an array, then trim each entry
     let stringArray = stringToArray.split(',');
     return stringArray.map( x => x.trim());
   }
@@ -37,10 +39,12 @@ export default function AddMovieController($scope, ApiService){
   $scope.genres = '';
 
   $scope.saveMovie = function(){
-    if($scope.title.length < 1){
+    //require title for saving
+    if($scope.movie.title.length < 1){
       return;
     }
 
+    //reformat actors and genres
     if($scope.actors.length > 0){
       $scope.movie.actors = splitAndTrimify($scope.actors);
     }
@@ -48,8 +52,11 @@ export default function AddMovieController($scope, ApiService){
     if($scope.genres.length > 0){
       $scope.movie.genres = splitAndTrimify($scope.genres);
     }
+
+    //stringify the JSON
     const movieData = JSON.stringify($scope.movie);
 
+    //save the movie
     ApiService.addMovie(movieData).then(onMovieSaveComplete, onError);
   }
 }

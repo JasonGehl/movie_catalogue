@@ -1,5 +1,6 @@
 export default function FullCatalogueListController($scope, ApiService){
   const onMoviesGetComplete = function(movieData){
+    //set movies for use by list
     $scope.movies = movieData;
     $scope.moviesLoaded = true;
   }
@@ -21,5 +22,6 @@ export default function FullCatalogueListController($scope, ApiService){
 
   $scope.movieSortOrder = '+title';
 
+  //on open, get the movies immediately
   $scope.getMovies();
 }
