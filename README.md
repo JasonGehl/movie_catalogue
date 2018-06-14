@@ -14,6 +14,6 @@ Start the server:
 
     npm start
 
-Server will be hosted at http://localhost:3000/
+Server will be hosted at http://localhost:3000/, backend server will be hosted at http://localhost:3001
 
 Navigate to the server to begin!
